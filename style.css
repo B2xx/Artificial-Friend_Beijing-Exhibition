@@ -1,0 +1,40 @@
+#canvas{
+  position:absolute;
+  top:10px;
+  left:10px;
+    z-index:1;
+}
+#capture{
+  position: absolute;
+  top:10px;
+  left:10px;
+    z-index:0;
+  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+  width:240px; 
+  height:400px;
+}
+
+@font-face {
+  font-family: myfont;
+  src: url("assets/ModernDOS8x14.ttf");
+}
+
+div {
+  font-family: myfont;
+}
+button{
+    cursor: url('images/cursor.png')3 10, auto;
+}
+#myContainer {
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+  }
