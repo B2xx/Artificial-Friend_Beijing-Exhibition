@@ -148,11 +148,11 @@ function draw() {
   pop()
   if (recog == 1) {
     voice.speak(content);
-    voice.setRate(0.3);
-    var r = setInterval(function () {               console.log(voice.speak);
-                if (!voice.speak) clearInterval(r);
-                else voice.resume();
-            }, 14000);
+    voice.setRate(0.5);
+    // var r = setInterval(function () {               console.log(voice.speak);
+    //             if (!voice.speak) clearInterval(r);
+    //             else voice.resume();
+    //         }, 14000);
     drawExpressions(detections, width / 2, height / 2, 0);
     index = 0;
     p = random([0, 1]);
@@ -168,12 +168,12 @@ function draw() {
           msg = content;
           let x = 60;
           let y = 300;
-let firstPath = font.getPath(msg.substring(0, 5), x, y, fSize);
+let firstPath = font.getPath(msg.substring(0, 8), x, y, fSize);
           path.push(firstPath);
 
-          for (let offset = 5; offset < msg.length; offset += 10) {
+          for (let offset = 8; offset < msg.length; offset += 16) {
             let str = msg.substring(offset, offset + 20);
-            let lineY = y + ((offset - 5) / 10 + 1) * 50;
+            let lineY = y + ((offset - 8) / 16 + 1) * 50;
             let nextPath = font.getPath(str, x, lineY, fSize);
             path.push(nextPath);
           }
@@ -560,14 +560,14 @@ function disgusted() {
 function neutral() {
   textSize(40);
   content =
-    "问君何能尔，\n心远地自偏";
+    "问君何能尔，  \n心远地自偏  ";
   typeWriter();
 }
 //fear
 function fearful() {
   textSize(40);
   content =
-    "不敢高声语，\n恐惊天上人 ";
+    "不敢高声语， \n恐惊天上人  ";
   typeWriter()
 }
 
